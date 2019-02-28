@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jesus movie Trailers!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+            background-color:silver;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #jesusstrailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color:#FDEDEC;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+        
+        
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'jesustrailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><h4 style="align:"center";">JESUS MOVIE TRAILERS</h4></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="IXqjcDchr14" data-toggle="modal" data-target="#trailer">
+    <img src="https://themancalledkenny.files.wordpress.com/2015/07/barrett-walking-on-the-water.jpg" width="220" height="342">
+    <h2>Jesus life story</h2>
+    <p>it describes the life of jesus</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="7GlehRPuD7U" data-toggle="modal" data-target="#trailer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN5LMvlBwY4pvFRRIxjMgSdsdlmYwpAy4obNiAzqGnWOy04pGFwQ" width="220" height="342">
+    <h2>comming Jesus</h2>
+    <p>jesus comming</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="vkv7R5twZE0" data-toggle="modal" data-target="#trailer">
+    <img src="data:image/jpeg;base64,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" width="220" height="342">
+    <h2>The jesus</h2>
+    <p>story of jesus</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="pJQXDkZ4mec" data-toggle="modal" data-target="#trailer">
+    <img src="http://cdn.collider.com/wp-content/uploads/son-of-god-poster.jpg" width="220" height="342">
+    <h2>son of god</h2>
+    <p>about jesus christ</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="W_swzr_lmZQ" data-toggle="modal" data-target="#trailer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOcvK_QQzihcaKlmM20gssD71T8oOiw5P0xg8BDaJ2WB177qOPgA" width="220" height="342">
+    <h2>Life of jesus</h2>
+    <p>about jesus life</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="hgccekzzZ3Q" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Killing_Jesus_tv_logo.png/240px-Killing_Jesus_tv_logo.png" width="220" height="342">
+    <h2>killing Jesus</h2>
+    <p>how jesus was killed by people</p>
+</div>
+
+    </div>
+  </body>
+</html>
