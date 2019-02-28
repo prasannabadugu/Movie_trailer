@@ -1,7 +1,5 @@
 # Movie_trailer
 Movie trailer udacity project
-# movie_tariler
-
 ### by Venkata Sai Prasanna
 
 Movie trailer website project, part of the Udacity [Full Stack Web Developer
